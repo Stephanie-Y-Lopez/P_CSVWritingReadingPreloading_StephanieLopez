@@ -1,0 +1,181 @@
+﻿<Window
+    x:Class="P_CSVWritingReadingPreloading_StephanieLopez.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:P_CSVWritingReadingPreloading_StephanieLopez"
+    mc:Ignorable="d"
+    Title="MainWindow"
+    Height="450"
+    Width="800">
+    <Canvas>
+        <Canvas.Background>
+            <ImageBrush
+                ImageSource="/backround.jpg" />
+        </Canvas.Background>
+        <Button
+            x:Name="B_AddCreature"
+            Content="Add Creature"
+            Canvas.Left="98"
+            Canvas.Top="292"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="182"
+            Height="32"
+            Foreground="Black"
+            FontFamily="MingLiU_HKSCS-ExtB"
+            Click="B_AddCreature_Click">
+            <Button.Background>
+                <ImageBrush
+                    ImageSource="/leafs.png" />
+            </Button.Background>
+        </Button>
+        <Button
+            x:Name="B_Load"
+            Content="Load CSV"
+            Canvas.Left="582"
+            Canvas.Top="362"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="182"
+            Height="32"
+            Foreground="Black"
+            FontFamily="MingLiU_HKSCS-ExtB"
+            Click="B_Load_Click">
+            <Button.Background>
+                <ImageBrush
+                    ImageSource="/leafs.png" />
+            </Button.Background>
+        </Button>
+        <Button
+            x:Name="B_Save"
+            Content="Save CSV"
+            Canvas.Left="336"
+            Canvas.Top="362"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Width="182"
+            Height="32"
+            Foreground="Black"
+            FontFamily="MingLiU_HKSCS-ExtB"
+            Click="B_Save_Click">
+            <Button.Background>
+                <ImageBrush
+                    ImageSource="/leafs.png" />
+            </Button.Background>
+        </Button>
+        <Button
+            x:Name="B_Preload"
+            Content="Preload!"
+            Canvas.Left="98"
+            Canvas.Top="362"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Width="182"
+            Height="32"
+            Foreground="Black"
+            FontFamily="MingLiU_HKSCS-ExtB"
+            Click="B_Preload_Click">
+            <Button.Background>
+                <ImageBrush
+                    ImageSource="/leafs.png" />
+            </Button.Background>
+        </Button>
+        <Label
+            x:Name="L_Creature"
+            Content="Type of Creature:"
+            Canvas.Left="82"
+            Canvas.Top="31"
+            Foreground="White"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Width="213"
+            FontFamily="MingLiU_HKSCS-ExtB" />
+        <TextBox
+            x:Name="TB_Creature"
+            Canvas.Left="82"
+            TextWrapping="Wrap"
+            Text=""
+            Canvas.Top="62"
+            Width="213"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Background="#FFFBC2C2"
+            Height="28"
+            FontFamily="MingLiU_HKSCS-ExtB" />
+        <Label
+            x:Name="L_Weapon"
+            Content="Weapon Choice:"
+            Canvas.Left="82"
+            Canvas.Top="199"
+            Foreground="White"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Width="213"
+            FontFamily="MingLiU_HKSCS-ExtB" />
+        <TextBox
+            x:Name="TB_Weapon"
+            Canvas.Left="82"
+            TextWrapping="Wrap"
+            Text=""
+            Canvas.Top="230"
+            Width="213"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Background="#FFFBC2C2"
+            Height="28"
+            FontFamily="MingLiU_HKSCS-ExtB" />
+        <Label
+            x:Name="L_Element"
+            Content="Type of Element:"
+            Canvas.Left="82"
+            Canvas.Top="117"
+            Foreground="White"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Width="213"
+            FontFamily="MingLiU_HKSCS-ExtB" />
+        <TextBox
+            x:Name="TB_Element"
+            Canvas.Left="82"
+            TextWrapping="Wrap"
+            Text=""
+            Canvas.Top="148"
+            Width="213"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Background="#FFFBC2C2"
+            Height="28"
+            FontFamily="MingLiU_HKSCS-ExtB" />
+        <ListView
+            x:Name="LV_Display"
+            Height="283"
+            Width="462"
+            d:ItemsSource="{d:SampleData ItemCount=5}"
+            Canvas.Left="323"
+            Canvas.Top="31"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            FontFamily="Bahnschrift Light"
+            FontSize="10"
+            Background="#FFA2E495"
+            BorderBrush="#FF5EE639"
+            Foreground="Black">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+                        Header="Creature Type "
+                        DisplayMemberBinding="{Binding Type}" />
+                    <GridViewColumn
+                        Header="Element Type "
+                        DisplayMemberBinding="{Binding Element }" />
+                    <GridViewColumn
+                        Header="Weapon Choice "
+                        DisplayMemberBinding="{Binding Weapon }" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Canvas>
+</Window>
